@@ -727,7 +727,7 @@ class StatementParser(object):
 
     def p_empty_statement(self, p):
         '''empty_statement : ';' '''
-        p[0] = Empty(lineno=p.lineno(0))
+        p[0] = Empty()
 
     def p_switch_statement(self, p):
         '''switch_statement : SWITCH '(' expression ')' switch_block'''
@@ -1352,7 +1352,7 @@ class ClassParser(object):
 
     def p_type_declaration2(self, p):
         '''type_declaration : ';' '''
-        p[0] = EmptyDeclaration(lineno=p.lineno(0))
+        p[0] = EmptyDeclaration()
 
     def p_class_declaration(self, p):
         '''class_declaration : class_header class_body'''
